@@ -1,0 +1,717 @@
+[
+  {
+    "incident_id": "LG-20260904-E96D44",
+    "timestamp": "04 Sep 2026, 12:45 AM",
+    "input": "URGENT: Your bank account has been suspended. Click here to verify your password and OTP immediately: http://secure-account.example/verify",
+    "threat": {
+      "classification": "Phishing",
+      "risk": "Critical",
+      "score:": 99,
+      "score": 99,
+      "triggers": [
+        "click here",
+        "urgent",
+        "password",
+        "otp",
+        "suspended"
+      ],
+      "why": [
+        "Urgency or pressure language detected.",
+        "Credential or identity-verification language detected.",
+        "Link/click-through language detected."
+      ],
+      "response": [
+        "Do not click the suspicious link or attachment.",
+        "If credentials were entered, change the password from the official website.",
+        "Enable multi-factor authentication where available.",
+        "Preserve the message, sender details and screenshots as evidence.",
+        "Report the incident through the appropriate official cybercrime channel."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Critical",
+    "score": 99,
+    "severity": "CRITICAL",
+    "priority": "P1",
+    "severity_reason": "Base risk score is 99/100. 2 IOC(s) were extracted.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Do not click the suspicious link or attachment.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "If credentials were entered, change the password from the official website.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Enable multi-factor authentication where available.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Preserve the message, sender details and screenshots as evidence.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Report the incident through the appropriate official cybercrime channel.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Phishing Response Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Do not click the suspicious link or attachment.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "If credentials were entered, change the password from the official website.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Enable multi-factor authentication where available.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Preserve the message, sender details and screenshots as evidence.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Report the incident through the appropriate official cybercrime channel.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "URL",
+        "value": "http://secure-account.example/verify"
+      },
+      {
+        "type": "Domain",
+        "value": "secure-account.example"
+      }
+    ],
+    "mitre": [
+      {
+        "id": "T1566",
+        "name": "Phishing",
+        "why": "The incident contains phishing/social-engineering indicators."
+      },
+      {
+        "id": "T1566.002",
+        "name": "Phishing: Spearphishing Link",
+        "why": "A suspicious link/URL is present."
+      },
+      {
+        "id": "T1056.002",
+        "name": "Input Capture: GUI Input Capture",
+        "why": "The content requests credentials or authentication information."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-04T00:45:36",
+        "action": "Incident Created",
+        "description": "LexGuard recorded this incident event."
+      }
+    ],
+    "response_progress": 0
+  },
+  {
+    "incident_id": "LG-20260904-3F5722",
+    "timestamp": "04 Sep 2026, 12:46 AM",
+    "input": "Forwarded message ---------\nFrom: Google Developer Program <googledev-noreply@google.com>\nDate: Wed, Sep 2, 2026 at 2:09 AM\nSubject: Welcome to GEAR\nTo: <shaaravapte1309@gmail.com>\n\n\nLogo Google Developer Program\nWelcome to GEAR\n\nYou’re in. GEAR gives you the tools and skills to move from prototype to production. It’s your framework for building secure, scalable AI agents that actually ship.\nOpen GEAR\nStart with the kickoff video\n\nKick off your journey with the briefing. Head to the Intro to Agents learning path to watch Aja and Jason break down the anatomy of an agent, the use of Agent Development Kit (ADK), and how agents can work together on your behalf.\nWatch video\nTake the foundational paths\n\nUse your 35 monthly credits to access the GEAR curriculum on Google Skills, and display your expertise by earning Skill Badges as you progress.\nStart a path\nIntro to agents\n\nLearn agent anatomy and the basics of the Gemini ecosystem.\n\t\nBuild intelligent agents\n\nUse ADK to optimize behavior, tool use, and memory management.\nGoogle Developer Program\n\t\n\nYour GEAR membership is powered by the Google Developer Program. Track your progress, unlock benefits, and connect with a global community of builders. By keeping your interests current, you’ll ensure personalized updates and exclusive invitations land directly in your inbox.\nUpdate interests\n\nView benefits\n© 2026 Google LLC 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA\n\nThis email was sent to shaaravapte1309@gmail.com because you're a member of the Google Developer Program.",
+    "threat": {
+      "classification": "Safe/Unclear",
+      "risk": "Low",
+      "score": 18,
+      "triggers": [],
+      "why": [
+        "No configured threat indicators were detected.",
+        "This is not proof that the content is safe."
+      ],
+      "response": [
+        "Preserve the original message or evidence.",
+        "Avoid clicking links or sharing credentials.",
+        "Secure important accounts with strong passwords and MFA.",
+        "Gather timestamps, screenshots and transaction details.",
+        "Seek official cybercrime/police assistance if the incident is serious."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Low",
+    "score": 22,
+    "severity": "LOW",
+    "priority": "P4",
+    "severity_reason": "2 IOC(s) were extracted.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Preserve the original message or evidence.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "Avoid clicking links or sharing credentials.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Secure important accounts with strong passwords and MFA.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Gather timestamps, screenshots and transaction details.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Seek official cybercrime/police assistance if the incident is serious.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Unclear Response Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Preserve the original message or evidence.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "Avoid clicking links or sharing credentials.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Secure important accounts with strong passwords and MFA.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Gather timestamps, screenshots and transaction details.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Seek official cybercrime/police assistance if the incident is serious.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "Email",
+        "value": "googledev-noreply@google.com"
+      },
+      {
+        "type": "Email",
+        "value": "shaaravapte1309@gmail.com"
+      }
+    ],
+    "mitre": [],
+    "timeline": [
+      {
+        "timestamp": "2026-09-04T00:46:12",
+        "action": "Incident Created",
+        "description": "LexGuard recorded this incident event."
+      }
+    ],
+    "response_progress": 0
+  },
+  {
+    "incident_id": "LG-20260904-421B2B",
+    "timestamp": "04 Sep 2026, 12:47 AM",
+    "input": "Your files have been encrypted. Pay bitcoin to receive the decryption key. Do not restart the system.",
+    "threat": {
+      "classification": "Ransomware",
+      "risk": "Critical",
+      "score:": 99,
+      "score": 99,
+      "triggers": [
+        "decrypt",
+        "pay bitcoin",
+        "bitcoin",
+        "decryption key"
+      ],
+      "why": [
+        "Ransom/payment-for-decryption language detected."
+      ],
+      "response": [
+        "Isolate the affected device from networks if safe to do so.",
+        "Do not delete or alter potentially useful evidence.",
+        "Disconnect affected shares/devices where appropriate.",
+        "Contact your organisation/admin or a qualified incident-response professional.",
+        "Preserve ransom notes, filenames, timestamps and logs."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Critical",
+    "score": 99,
+    "severity": "CRITICAL",
+    "priority": "P1",
+    "severity_reason": "Base risk score is 99/100. Malware/impact behavior increases urgency.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Isolate the affected device from networks if safe to do so.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "Do not delete or alter potentially useful evidence.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Disconnect affected shares/devices where appropriate.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Contact your organisation/admin or a qualified incident-response professional.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Preserve ransom notes, filenames, timestamps and logs.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Ransomware Response Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Isolate the affected device from networks if safe to do so.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "Do not delete or alter potentially useful evidence.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Disconnect affected shares/devices where appropriate.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Contact your organisation/admin or a qualified incident-response professional.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Preserve ransom notes, filenames, timestamps and logs.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [],
+    "mitre": [
+      {
+        "id": "T1486",
+        "name": "Data Encrypted for Impact",
+        "why": "The incident describes encryption/ransom behavior."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-04T00:47:00",
+        "action": "Incident Created",
+        "description": "LexGuard recorded this incident event."
+      },
+      {
+        "timestamp": "2026-09-04T00:47:58",
+        "action": "Response Step Updated",
+        "description": "Isolate the affected device from networks if safe to do so. — completed."
+      },
+      {
+        "timestamp": "2026-09-04T00:48:21",
+        "action": "Case Status Updated",
+        "description": "Case status changed to INVESTIGATING."
+      },
+      {
+        "timestamp": "2026-09-04T00:48:24",
+        "action": "Response Step Updated",
+        "description": "Isolate the affected device from networks if safe to do so. — reopened."
+      },
+      {
+        "timestamp": "2026-09-04T00:48:26",
+        "action": "Case Status Updated",
+        "description": "Case status changed to RESOLVED."
+      },
+      {
+        "timestamp": "2026-09-04T00:48:28",
+        "action": "Case Status Updated",
+        "description": "Case status changed to ACTIVE."
+      }
+    ],
+    "response_progress": 0,
+    "status": "ACTIVE"
+  },
+  {
+    "incident_id": "LG-20260904-E30974",
+    "timestamp": "04 Sep 2026, 12:47 AM",
+    "input": "Download invoice.exe from this link and install it to view the document.",
+    "threat": {
+      "classification": "Malware-link",
+      "risk": "High",
+      "score:": 80,
+      "score": 80,
+      "triggers": [
+        "download",
+        ".exe"
+      ],
+      "why": [
+        "Potentially risky file/download language detected."
+      ],
+      "response": [
+        "Do not open or execute the file.",
+        "If already opened, disconnect the device from networks if safe.",
+        "Run trusted security scans and update the operating system.",
+        "Preserve the suspicious URL/file as evidence.",
+        "Change credentials if compromise is suspected."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "High",
+    "score": 80,
+    "severity": "HIGH",
+    "priority": "P2",
+    "severity_reason": "Base risk score is 80/100. 1 IOC(s) were extracted. Malware/impact behavior increases urgency.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Do not open or execute the file.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "If already opened, disconnect the device from networks if safe.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Run trusted security scans and update the operating system.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Preserve the suspicious URL/file as evidence.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Change credentials if compromise is suspected.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Malware-link Response Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Do not open or execute the file.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "If already opened, disconnect the device from networks if safe.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Run trusted security scans and update the operating system.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Preserve the suspicious URL/file as evidence.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Change credentials if compromise is suspected.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "Domain",
+        "value": "invoice.exe"
+      }
+    ],
+    "mitre": [
+      {
+        "id": "T1204.002",
+        "name": "User Execution: Malicious File",
+        "why": "The incident involves a potentially malicious file or executable."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-04T00:47:05",
+        "action": "Incident Created",
+        "description": "LexGuard recorded this incident event."
+      }
+    ],
+    "response_progress": 0
+  },
+  {
+    "incident_id": "LG-20260904-F37783",
+    "timestamp": "04 Sep 2026, 12:47 AM",
+    "input": "Someone created a fake account in my name and used my personal details without permission.",
+    "threat": {
+      "classification": "Safe/Unclear",
+      "risk": "Low",
+      "score": 18,
+      "triggers": [],
+      "why": [
+        "No configured threat indicators were detected.",
+        "This is not proof that the content is safe."
+      ],
+      "response": [
+        "Preserve the original message or evidence.",
+        "Avoid clicking links or sharing credentials.",
+        "Secure important accounts with strong passwords and MFA.",
+        "Gather timestamps, screenshots and transaction details.",
+        "Seek official cybercrime/police assistance if the incident is serious."
+      ]
+    },
+    "offence": "Identity Theft",
+    "offence_triggers": [
+      "fake account in my name"
+    ],
+    "risk": "Medium",
+    "score": 59,
+    "severity": "MEDIUM",
+    "priority": "P3",
+    "severity_reason": "Low-confidence or informational incident indicators.",
+    "legal": {
+      "category": "Identity Theft",
+      "section": "Section 66C",
+      "description": "Fraudulent or dishonest use of another person's electronic signature, password or other unique identification feature.",
+      "reporting": "Report through the official cybercrime reporting channel (cybercrime.gov.in) or the nearest police cyber cell. For financial fraud, contact your bank/payment provider immediately."
+    },
+    "response": [
+      {
+        "id": 1,
+        "text": "Secure affected accounts and identity documents.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "Change compromised passwords and enable MFA.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Preserve fraudulent profiles, messages and transaction records.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Contact affected service providers or financial institutions if relevant.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Report the incident through the appropriate official channel.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Identity Theft Response Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Secure affected accounts and identity documents.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "Change compromised passwords and enable MFA.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Preserve fraudulent profiles, messages and transaction records.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Contact affected service providers or financial institutions if relevant.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Report the incident through the appropriate official channel.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [],
+    "mitre": [],
+    "timeline": [
+      {
+        "timestamp": "2026-09-04T00:47:07",
+        "action": "Incident Created",
+        "description": "LexGuard recorded this incident event."
+      }
+    ],
+    "response_progress": 0
+  },
+  {
+    "incident_id": "LG-20260904-4463F2",
+    "timestamp": "04 Sep 2026, 12:47 AM",
+    "input": "URGENT: Your bank account has been suspended. Click here to verify your password and OTP immediately: http://secure-account.example/verify",
+    "threat": {
+      "classification": "Phishing",
+      "risk": "Critical",
+      "score:": 99,
+      "score": 99,
+      "triggers": [
+        "click here",
+        "urgent",
+        "password",
+        "otp",
+        "suspended"
+      ],
+      "why": [
+        "Urgency or pressure language detected.",
+        "Credential or identity-verification language detected.",
+        "Link/click-through language detected."
+      ],
+      "response": [
+        "Do not click the suspicious link or attachment.",
+        "If credentials were entered, change the password from the official website.",
+        "Enable multi-factor authentication where available.",
+        "Preserve the message, sender details and screenshots as evidence.",
+        "Report the incident through the appropriate official cybercrime channel."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Critical",
+    "score": 99,
+    "severity": "CRITICAL",
+    "priority": "P1",
+    "severity_reason": "Base risk score is 99/100. 2 IOC(s) were extracted.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Do not click the suspicious link or attachment.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "If credentials were entered, change the password from the official website.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Enable multi-factor authentication where available.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Preserve the message, sender details and screenshots as evidence.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Report the incident through the appropriate official cybercrime channel.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Phishing Response Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Do not click the suspicious link or attachment.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "If credentials were entered, change the password from the official website.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Enable multi-factor authentication where available.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Preserve the message, sender details and screenshots as evidence.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Report the incident through the appropriate official cybercrime channel.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "URL",
+        "value": "http://secure-account.example/verify"
+      },
+      {
+        "type": "Domain",
+        "value": "secure-account.example"
+      }
+    ],
+    "mitre": [
+      {
+        "id": "T1566",
+        "name": "Phishing",
+        "why": "The incident contains phishing/social-engineering indicators."
+      },
+      {
+        "id": "T1566.002",
+        "name": "Phishing: Spearphishing Link",
+        "why": "A suspicious link/URL is present."
+      },
+      {
+        "id": "T1056.002",
+        "name": "Input Capture: GUI Input Capture",
+        "why": "The content requests credentials or authentication information."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-04T00:47:12",
+        "action": "Incident Created",
+        "description": "LexGuard recorded this incident event."
+      }
+    ],
+    "response_progress": 0
+  }
+]

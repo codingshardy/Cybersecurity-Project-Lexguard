@@ -1,0 +1,65 @@
+[
+  {
+    "timestamp": "2026-09-04T00:47:00",
+    "action": "Incident Created",
+    "incident_id": "LG-20260904-421B2B",
+    "evidence_id": null,
+    "description": "Case record saved.",
+    "previous_hash": "GENESIS",
+    "hash": "f9536340818532274f36b28c3f99c96a3e1b18acf7cd1ace5e116e268e1c74df"
+  },
+  {
+    "timestamp": "2026-09-04T00:47:46",
+    "action": "Evidence Exported",
+    "incident_id": "LG-20260904-421B2B",
+    "evidence_id": null,
+    "description": "Complete forensic case package generated.",
+    "previous_hash": "f9536340818532274f36b28c3f99c96a3e1b18acf7cd1ace5e116e268e1c74df",
+    "hash": "a47c0d5bd3832a9e580e017fba033ec08362dcfb2ceb8e1b970c34b2b2334e04"
+  },
+  {
+    "timestamp": "2026-09-04T00:47:58",
+    "action": "Response Step Updated",
+    "incident_id": "LG-20260904-421B2B",
+    "evidence_id": null,
+    "description": "Isolate the affected device from networks if safe to do so.",
+    "previous_hash": "a47c0d5bd3832a9e580e017fba033ec08362dcfb2ceb8e1b970c34b2b2334e04",
+    "hash": "7a54a85804d1f642b3c0e3e94b89d1899e1dc25cfbb5a204dad7df8cb7b9884f"
+  },
+  {
+    "timestamp": "2026-09-04T00:48:21",
+    "action": "Case Status Updated",
+    "incident_id": "LG-20260904-421B2B",
+    "evidence_id": null,
+    "description": "INVESTIGATING",
+    "previous_hash": "7a54a85804d1f642b3c0e3e94b89d1899e1dc25cfbb5a204dad7df8cb7b9884f",
+    "hash": "fcf463b7b3b09a9aaa1c4d80dbdc0745e06e56300df9459b69c604cb01e09da7"
+  },
+  {
+    "timestamp": "2026-09-04T00:48:24",
+    "action": "Response Step Updated",
+    "incident_id": "LG-20260904-421B2B",
+    "evidence_id": null,
+    "description": "Isolate the affected device from networks if safe to do so.",
+    "previous_hash": "fcf463b7b3b09a9aaa1c4d80dbdc0745e06e56300df9459b69c604cb01e09da7",
+    "hash": "f48cc2b1543a5409ec75b4ee807a7702bb29f11ff09d7e8523f0dfd60a08be36"
+  },
+  {
+    "timestamp": "2026-09-04T00:48:26",
+    "action": "Case Status Updated",
+    "incident_id": "LG-20260904-421B2B",
+    "evidence_id": null,
+    "description": "RESOLVED",
+    "previous_hash": "f48cc2b1543a5409ec75b4ee807a7702bb29f11ff09d7e8523f0dfd60a08be36",
+    "hash": "c8769a41080ae6c548e69180d6ba9f7c3a99fd306ed07f2cc98a7f15c50d66aa"
+  },
+  {
+    "timestamp": "2026-09-04T00:48:28",
+    "action": "Case Status Updated",
+    "incident_id": "LG-20260904-421B2B",
+    "evidence_id": null,
+    "description": "ACTIVE",
+    "previous_hash": "c8769a41080ae6c548e69180d6ba9f7c3a99fd306ed07f2cc98a7f15c50d66aa",
+    "hash": "f8816c10e2143059afe3666e0e2bb5f33de5b2031d50a6cf572204704df9974b"
+  }
+]

@@ -1,0 +1,58 @@
+LEXGUARD DEMO SAMPLE INPUTS
+
+==============================
+5 PHISHING / SCAM MESSAGES
+==============================
+
+1.
+URGENT: Your bank account has been suspended. Verify your account now by clicking here and confirm your password and OTP.
+
+2.
+Your account will be locked today. Login and confirm your account immediately using the link in this message.
+
+3.
+Congratulations! You have won a gift card. Act now and send me the OTP to receive your prize. Do not tell anyone.
+
+4.
+Security alert: download the attached APK immediately to prevent your account from being disabled.
+
+5.
+Your files are encrypted. Pay 0.05 bitcoin to receive the decryption key and recover your files.
+
+==============================
+5 INCIDENT DESCRIPTIONS
+==============================
+
+1.
+Someone accessed my email account without permission and changed my password.
+
+2.
+A fake account was created in my name using my personal details.
+
+3.
+I was tricked into sending money through UPI and the person disappeared.
+
+4.
+A stranger keeps sending me threatening messages and stalking me online.
+
+5.
+An attacker copied confidential files from our computer without authorization.
+
+==============================
+OTHER DEMO INPUTS
+==============================
+
+Wi-Fi:
+- Open
+- WEP
+- WPA2
+- WPA3
+
+App permissions:
+camera, contacts, sms, location
+
+Crypto note:
+This is a confidential classroom demonstration note.
+
+Locker note:
+DEMO-ID-12345 | Do not use a real password or ID during the presentation.

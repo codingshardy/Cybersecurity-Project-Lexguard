@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": "2026-09-04T00:46:12",
+    "action": "Incident Created",
+    "incident_id": "LG-20260904-3F5722",
+    "evidence_id": null,
+    "description": "Case record saved.",
+    "previous_hash": "GENESIS",
+    "hash": "bbe2e7c0aa60039c16cdc97b62eecd493efc68037a7c672371630d23cc80ce9b"
+  }
+]
