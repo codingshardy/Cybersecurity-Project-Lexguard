@@ -1228,5 +1228,224 @@
     ],
     "response_progress": 0,
     "evidence": []
+  },
+  {
+    "incident_id": "LG-20260930-9A2EE3",
+    "timestamp": "30 Sep 2026, 01:38 AM",
+    "input": "My mobile SIM network suddenly showed No Service. Within 30 minutes, ₹2,00,000 was transferred from my net banking using redirected 2FA SMS tokens.",
+    "threat": {
+      "classification": "Informational / Low Threat Risk",
+      "risk": "Low",
+      "score": 15,
+      "triggers": [],
+      "why": [
+        "No direct attack signatures or malicious indicators matched standard heuristic rules.",
+        "Always exercise general caution when handling unsolicited communications."
+      ],
+      "response": [
+        "Preserve all digital artifacts (messages, logs, files, timestamps) in pristine condition.",
+        "Avoid clicking unverified links or disclosing credentials/identity information.",
+        "Enable Multi-Factor Authentication across all critical email and financial services.",
+        "Perform full malware scan using updated signature and heuristic engines.",
+        "Seek guidance from authorized cybersecurity professionals or Cyber Cell authorities."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Low",
+    "score": 20,
+    "severity": "LOW",
+    "priority": "P4 (Informational)",
+    "severity_reason": "Informational security incident.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Preserve all digital artifacts (messages, logs, files, timestamps) in pristine condition.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "Avoid clicking unverified links or disclosing credentials/identity information.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Enable Multi-Factor Authentication across all critical email and financial services.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Perform full malware scan using updated signature and heuristic engines.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Seek guidance from authorized cybersecurity professionals or Cyber Cell authorities.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Unclear Containment & Remediation Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Preserve all digital artifacts (messages, logs, files, timestamps) in pristine condition.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "Avoid clicking unverified links or disclosing credentials/identity information.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Enable Multi-Factor Authentication across all critical email and financial services.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Perform full malware scan using updated signature and heuristic engines.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Seek guidance from authorized cybersecurity professionals or Cyber Cell authorities.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [],
+    "mitre": [],
+    "timeline": [
+      {
+        "timestamp": "2026-09-30T01:38:02",
+        "action": "Incident Analyzed & Registered",
+        "description": "LexGuard Security Engine recorded this incident activity."
+      }
+    ],
+    "response_progress": 0,
+    "evidence": []
+  },
+  {
+    "incident_id": "LG-20260930-8A95B1",
+    "timestamp": "30 Sep 2026, 01:38 AM",
+    "input": "ATTENTION: All your company databases and documents have been encrypted with AES-256. Pay 0.5 Bitcoin to 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa to obtain your decryption key. Decryptor contact: lockdata@darkmail.onion",
+    "threat": {
+      "classification": "Ransomware",
+      "risk": "Critical",
+      "score": 99,
+      "triggers": [
+        "decrypt",
+        "bitcoin",
+        "decryption key"
+      ],
+      "why": [
+        "Extortion / cryptographic ransom payload indicator identified."
+      ],
+      "response": [
+        "Instantly isolate the affected host from LAN, Wi-Fi, VPN, and paired cloud storage.",
+        "Do NOT reboot or shut down abruptly if RAM dump/memory forensics is feasible.",
+        "Identify ransomware extension, preserve the ransom note file and sample encrypted file without altering timestamps.",
+        "Assess offline backup integrity; verify if decryption keys are available via NoMoreRansom.",
+        "Notify organization Incident Response team and report to cybercrime authorities immediately."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Critical",
+    "score": 99,
+    "severity": "CRITICAL",
+    "priority": "P1 (Immediate Containment)",
+    "severity_reason": "High heuristic threat score (99/100). 3 Indicator(s) of Compromise extracted. Destructive malware payload behavior detected.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Instantly isolate the affected host from LAN, Wi-Fi, VPN, and paired cloud storage.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "Do NOT reboot or shut down abruptly if RAM dump/memory forensics is feasible.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Identify ransomware extension, preserve the ransom note file and sample encrypted file without altering timestamps.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Assess offline backup integrity; verify if decryption keys are available via NoMoreRansom.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Notify organization Incident Response team and report to cybercrime authorities immediately.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Ransomware Containment & Remediation Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Instantly isolate the affected host from LAN, Wi-Fi, VPN, and paired cloud storage.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "Do NOT reboot or shut down abruptly if RAM dump/memory forensics is feasible.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Identify ransomware extension, preserve the ransom note file and sample encrypted file without altering timestamps.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Assess offline backup integrity; verify if decryption keys are available via NoMoreRansom.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Notify organization Incident Response team and report to cybercrime authorities immediately.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "Email",
+        "value": "lockdata@darkmail.onion"
+      },
+      {
+        "type": "Crypto Wallet",
+        "value": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+      },
+      {
+        "type": "UPI VPA",
+        "value": "lockdata@darkmail"
+      }
+    ],
+    "mitre": [
+      {
+        "id": "T1486",
+        "name": "Data Encrypted for Impact",
+        "tactic": "Impact",
+        "why": "Adversary encrypts target filesystem to interrupt availability and extort ransom."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-30T01:38:52",
+        "action": "Incident Analyzed & Registered",
+        "description": "LexGuard Security Engine recorded this incident activity."
+      }
+    ],
+    "response_progress": 0,
+    "evidence": []
   }
 ]
