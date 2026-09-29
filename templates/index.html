@@ -1,60 +1,724 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LexGuard — Cyber Threat & Legal Response</title><link rel="stylesheet" href="/static/style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LexGuard — Unified Cyber Defense &amp; Forensics Platform</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
 <body>
 <div class="app-shell">
+  <!-- SIDEBAR NAVIGATION -->
   <aside class="sidebar">
-    <div class="brand"><div class="brand-mark">⌁</div><div><b>LEXGUARD</b><span>CYBER DEFENSE</span></div></div>
+    <div class="brand">
+      <div class="brand-mark">⌁</div>
+      <div>
+        <b>LEXGUARD</b>
+        <span>CYBER DEFENSE &amp; SOC</span>
+      </div>
+    </div>
     <nav>
-      <button class="nav active" data-page="dashboard">◈ <span>Dashboard</span></button>
-      <button class="nav" data-page="analyze">⌁ <span>Analyze Incident</span></button>
+      <button class="nav active" data-page="dashboard">◈ <span>SOC Dashboard</span></button>
+      <button class="nav" data-page="analyze">⌁ <span>Threat Intelligence</span></button>
+      <button class="nav" data-page="crypto">◉ <span>Cryptographic Suite</span></button>
+      <button class="nav" data-page="dlp">🛡 <span>Data Protection &amp; DLP</span></button>
       <button class="nav" data-page="evidence">▣ <span>Evidence Vault</span></button>
-      <button class="nav" data-page="investigate">⌕ <span>Investigation</span></button>
-      <button class="nav" data-page="lab">◈ <span>Security Lab</span></button>
-      <button class="nav" data-page="crypto">◉ <span>Crypto Vault</span></button>
-      <button class="nav" data-page="tools">◫ <span>Security Tools</span></button>
-      <button class="nav" data-page="response">⚡ <span>Response Center</span></button>
-      <button class="nav" data-page="simulator">▷ <span>Demo Simulator</span></button>
+      <button class="nav" data-page="legal">⚖ <span>Cyber Law &amp; FIR</span></button>
+      <button class="nav" data-page="wireless">📡 <span>Wireless &amp; Mobile</span></button>
+      <button class="nav" data-page="response">⚡ <span>Incident Response</span></button>
+      <button class="nav" data-page="investigate">⌕ <span>Case Investigation</span></button>
+      <button class="nav" data-page="lab">◈ <span>Security Triage Lab</span></button>
+      <button class="nav" data-page="simulator">▷ <span>Attack Simulator</span></button>
     </nav>
-    <div class="sidebar-bottom"><div class="status-dot"></div><span>LOCAL ENGINE ONLINE</span><small>No cloud/API dependency</small></div>
+    <div class="sidebar-bottom">
+      <div class="status-dot"></div>
+      <span>LOCAL FORENSIC ENGINE</span>
+      <small>Zero Cloud Leakage • Air-Gapped</small>
+    </div>
   </aside>
-  <main class="main">
-    <header class="topbar"><div><span class="eyebrow">CYBER THREAT & LEGAL RESPONSE PLATFORM</span><h1 id="pageTitle">Security Dashboard</h1></div><div class="top-actions"><span class="pill"><i></i> Rule Engine Active</span><button id="themeToggle" class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to light theme" title="Switch theme"><span id="themeIcon">☀</span><span id="themeLabel">LIGHT MODE</span></button><button class="icon-btn" onclick="showPage('response')">?</button></div></header>
 
+  <!-- MAIN VIEWPORT -->
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">ENTERPRISE CYBER DEFENSE &amp; LEGAL FORENSICS SUITE</span>
+        <h1 id="pageTitle">SOC Security Dashboard</h1>
+      </div>
+      <div class="top-actions">
+        <span class="pill"><i></i> Threat Engine Active</span>
+        <span class="pill blue"><i></i> SHA-256 Seal Active</span>
+        <button id="themeToggle" class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch Theme" title="Toggle Dark/Light Mode">
+          <span id="themeIcon">☀</span>
+          <span id="themeLabel">LIGHT MODE</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 1. SOC DASHBOARD -->
     <section id="dashboard" class="page active-page">
-      <div class="hero"><div><span class="eyebrow">WELCOME TO LEXGUARD</span><h2>Detect. Protect. Preserve. Respond.</h2><p>One platform connecting cyber-threat identification, evidence integrity, incident response and legal guidance.</p><button class="primary" onclick="showPage('analyze')">Analyze an Incident <b>→</b></button></div><div class="shield"><div class="ring"><span>LG</span></div><div class="orbit o1"></div><div class="orbit o2"></div></div></div>
-      <div class="stats"><div class="stat"><span>INCIDENTS</span><strong id="dashIncidents">0</strong><small>Case history</small></div><div class="stat"><span>HIGH / CRITICAL</span><strong id="dashCritical">0</strong><small>Priority cases</small></div><div class="stat"><span>EVIDENCE</span><strong id="dashEvidence">0</strong><small>Integrity tracked</small></div><div class="stat"><span>IOCs</span><strong id="dashIocs">0</strong><small>Locally extracted</small></div><div class="stat"><span>THREAT ENGINE</span><strong>READY</strong><small>Rule-based analysis</small></div><div class="stat"><span>EVIDENCE INTEGRITY</span><strong>SHA-256</strong><small>Tamper verification</small></div><div class="stat"><span>ENCRYPTION</span><strong>FERNET</strong><small>Symmetric protection</small></div><div class="stat"><span>LEGAL GUIDANCE</span><strong>IT ACT</strong><small>Educational mapping</small></div></div>
-      <div class="two-col" style="margin-bottom:18px"><div class="panel"><h4>THREAT DISTRIBUTION</h4><div id="threatDistribution" class="output">Loading…</div></div><div class="panel"><h4>OFFENCE DISTRIBUTION</h4><div id="offenceDistribution" class="output">Loading…</div></div></div><div class="section-head"><div><span class="eyebrow">CORE MODULES</span><h3>Security command center</h3></div><span class="muted">6 CO-mapped modules + response workflow</span></div>
+      <div class="hero">
+        <div>
+          <span class="eyebrow">CENTRALIZED SECURITY OPERATIONS</span>
+          <h2>Detect. Encrypt. Protect. Prosecute.</h2>
+          <p>Integrated threat triage, multi-cipher cryptography, automated data loss prevention, tamper-evident evidence preservation, and court-admissible cyber law enforcement.</p>
+          <div class="hero-actions">
+            <button class="primary" onclick="showPage('analyze')">Analyze Incident <b>→</b></button>
+            <button class="secondary" onclick="showPage('simulator')">Launch Live Attack Simulation <b>▷</b></button>
+          </div>
+        </div>
+        <div class="shield">
+          <div class="ring"><span>LG</span></div>
+          <div class="orbit o1"></div>
+          <div class="orbit o2"></div>
+        </div>
+      </div>
+
+      <!-- SOC Metric Counter Cards -->
+      <div class="stats">
+        <div class="stat">
+          <span>LOGGED INCIDENTS</span>
+          <strong id="dashIncidents">0</strong>
+          <small>Managed Cases</small>
+        </div>
+        <div class="stat">
+          <span>HIGH / CRITICAL</span>
+          <strong id="dashCritical" class="text-red">0</strong>
+          <small>Priority Threats</small>
+        </div>
+        <div class="stat">
+          <span>SECURED EVIDENCE</span>
+          <strong id="dashEvidence">0</strong>
+          <small>SHA-256 Verified</small>
+        </div>
+        <div class="stat">
+          <span>EXTRACTED IOCs</span>
+          <strong id="dashIocs" class="text-accent">0</strong>
+          <small>Threat Indicators</small>
+        </div>
+        <div class="stat">
+          <span>CRYPTOGRAPHY</span>
+          <strong>AES / RSA</strong>
+          <small>Multi-Cipher Suite</small>
+        </div>
+        <div class="stat">
+          <span>DATA PROTECTION</span>
+          <strong>ACTIVE DLP</strong>
+          <small>PII Redaction &amp; DoD Wipe</small>
+        </div>
+        <div class="stat">
+          <span>EVIDENCE SEAL</span>
+          <strong>SEC 65B</strong>
+          <small>Court Admissible</small>
+        </div>
+        <div class="stat">
+          <span>CYBER LAW</span>
+          <strong>IT ACT / BNS</strong>
+          <small>Automated FIR Engine</small>
+        </div>
+      </div>
+
+      <!-- Threat & Offence Distributions -->
+      <div class="two-col" style="margin-bottom:20px;">
+        <div class="panel">
+          <div class="panel-header">
+            <h4>THREAT VECTOR DISTRIBUTION</h4>
+            <span class="badge">Real-Time</span>
+          </div>
+          <div id="threatDistribution" class="output">Loading telemetry…</div>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h4>CYBER OFFENCE CLASSIFICATION</h4>
+            <span class="badge">Statutory</span>
+          </div>
+          <div id="offenceDistribution" class="output">Loading telemetry…</div>
+        </div>
+      </div>
+
+      <!-- Core Operational Modules Grid -->
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">COMMAND CAPABILITIES</span>
+          <h3>Security &amp; Forensics Subsystems</h3>
+        </div>
+        <span class="muted">Unified End-to-End Cyber Defense Ecosystem</span>
+      </div>
+
       <div class="module-grid">
-        <div class="module-card" onclick="showPage('analyze')"><span class="module-icon red">⌁</span><h4>Threat Identifier</h4><p>Phishing, ransomware, malware-link & social engineering detection.</p><b>CO1 →</b></div>
-        <div class="module-card" onclick="showPage('crypto')"><span class="module-icon blue">◉</span><h4>Crypto Vault</h4><p>Fernet encryption and SHA-256 integrity demonstrations.</p><b>CO2 →</b></div>
-        <div class="module-card" onclick="showPage('evidence')"><span class="module-icon purple">▣</span><h4>Evidence Vault</h4><p>Store incident evidence and verify file integrity.</p><b>CO3 →</b></div>
-        <div class="module-card" onclick="showPage('analyze')"><span class="module-icon amber">⚖</span><h4>Offence + Law</h4><p>Classify an incident and connect it to educational legal guidance.</p><b>CO4 / CO6 →</b></div>
-        <div class="module-card" onclick="showPage('tools')"><span class="module-icon green">⌁</span><h4>Wireless & Mobile</h4><p>Wi-Fi encryption and sensitive app-permission risk checks.</p><b>CO5 →</b></div>
-        <div class="module-card" onclick="showPage('response')"><span class="module-icon cyan">⚡</span><h4>Response Center</h4><p>Guided “I think I've been hacked” response workflow.</p><b>START →</b></div>
+        <div class="module-card" onclick="showPage('analyze')">
+          <span class="module-icon red">⌁</span>
+          <h4>Threat Intelligence</h4>
+          <p>Heuristic detection for Phishing, Ransomware, SQLi, XSS, and Trojans with MITRE ATT&amp;CK matrix mapping.</p>
+          <b>OPEN ANALYZER →</b>
+        </div>
+        <div class="module-card" onclick="showPage('crypto')">
+          <span class="module-icon blue">◉</span>
+          <h4>Cryptographic Suite</h4>
+          <p>RSA 2048-bit Asymmetric Keys, AES-256-GCM/CBC, Image Steganography, and Multi-Hash verification.</p>
+          <b>OPEN CRYPTO LAB →</b>
+        </div>
+        <div class="module-card" onclick="showPage('dlp')">
+          <span class="module-icon green">🛡</span>
+          <h4>Data Loss Prevention</h4>
+          <p>Real-time PII Redactor for Aadhaar/PAN/Cards, Zero-Knowledge Locker, and DoD 5220.22-M File Shredder.</p>
+          <b>OPEN PRIVACY VAULT →</b>
+        </div>
+        <div class="module-card" onclick="showPage('evidence')">
+          <span class="module-icon purple">▣</span>
+          <h4>Digital Evidence Vault</h4>
+          <p>Secure artifact preservation, automated SHA-256 integrity verification, and tamper-evident custody chains.</p>
+          <b>OPEN EVIDENCE VAULT →</b>
+        </div>
+        <div class="module-card" onclick="showPage('legal')">
+          <span class="module-icon amber">⚖</span>
+          <h4>Cyber Law &amp; FIR Suite</h4>
+          <p>IT Act &amp; BNS statutory mapping, automated Cyber Police FIR Generator, and Section 65B Court Certificates.</p>
+          <b>OPEN LEGAL SUITE →</b>
+        </div>
+        <div class="module-card" onclick="showPage('wireless')">
+          <span class="module-icon cyan">📡</span>
+          <h4>Wireless &amp; Mobile Radar</h4>
+          <p>Wi-Fi protocol risk analyzer (Evil Twin / Deauth) and Android APK dangerous permission malware profiler.</p>
+          <b>OPEN RADAR →</b>
+        </div>
       </div>
     </section>
 
-    <section id="analyze" class="page"><div class="section-head"><div><span class="eyebrow">UNIFIED WORKFLOW</span><h3>Analyze an incident</h3><p class="muted">Paste a suspicious message or describe what happened. LexGuard runs threat detection, offence classification, risk scoring, response guidance and legal mapping together.</p></div></div>
-      <div class="input-panel"><textarea id="incidentText" placeholder="Example: Your bank account will be suspended. Click here and verify your OTP immediately..."></textarea><div class="input-footer"><span>Rule-based • Offline • Explainable</span><button class="primary" onclick="analyze()">RUN FULL ANALYSIS →</button></div></div>
+    <!-- 2. THREAT INTELLIGENCE & INCIDENT ANALYSIS -->
+    <section id="analyze" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">UNIFIED THREAT TRIAGE</span>
+          <h3>Threat Intelligence &amp; Heuristic Analysis</h3>
+          <p class="muted">Ingest suspicious emails, SMS logs, payloads, or incident reports. The heuristic engine extracts IOCs, calculates risk scores, identifies attack vectors, maps MITRE ATT&amp;CK techniques, and triggers statutory legal mapping.</p>
+        </div>
+      </div>
+
+      <div class="input-panel">
+        <textarea id="incidentText" placeholder="Paste suspicious message, phishing email, server log, or describe cyber security incident... (e.g., 'URGENT: Your State Bank account is suspended. Click here to verify OTP: http://sbi-verify.in/login')"></textarea>
+        <div class="input-footer">
+          <span>Multi-Vector Heuristic Engine • Deterministic • Explainable</span>
+          <button class="primary" onclick="analyze()">RUN FULL THREAT TRIAGE →</button>
+        </div>
+      </div>
+
       <div id="analysisResult" class="hidden"></div>
     </section>
 
-    <section id="evidence" class="page"><div class="section-head"><div><span class="eyebrow">FORENSIC EVIDENCE • SHA-256 • CHAIN OF CUSTODY</span><h3>Digital Evidence Vault</h3><p class="muted">Secure evidence, preserve its original hash and maintain a transparent custody history.</p></div></div><div class="two-col"><div class="panel"><h4>＋ Secure evidence</h4><input id="evidenceIncident" placeholder="Incident ID (optional — e.g. LG-20260903-ABC123)"><input type="file" id="evidenceFile"><textarea id="evidenceNote" placeholder="Evidence note (optional)"></textarea><button class="primary" onclick="uploadEvidence()">SECURE EVIDENCE</button><div id="evidenceMsg"></div></div><div class="panel"><h4>◈ Evidence records</h4><div id="evidenceList" class="evidence-list">Loading...</div></div></div><div id="custodyPanel" class="panel hidden" style="margin-top:18px"></div></section>
+    <!-- 3. CRYPTOGRAPHIC SUITE -->
+    <section id="crypto" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">CRYPTOGRAPHIC ALGORITHMS &amp; STEGANOGRAPHY</span>
+          <h3>Cryptographic Security Suite</h3>
+          <p class="muted">Explore military-grade symmetric encryption (AES-256), asymmetric public-key cryptography (RSA-2048), digital signatures, cryptographic hashing, image steganography, and key-exchange protocols.</p>
+        </div>
+      </div>
 
-    <section id="crypto" class="page"><div class="section-head"><div><span class="eyebrow">CO2 • CRYPTOGRAPHY</span><h3>Crypto Vault</h3><p class="muted">Demonstrate symmetric encryption with the project's Fernet key.</p></div></div>
-      <div class="two-col"><div class="panel"><h4>Encrypt / Decrypt text</h4><textarea id="cryptoText" placeholder="Enter text or paste a Fernet token..."></textarea><div class="row"><button class="primary" onclick="cryptoAction('encrypt')">ENCRYPT</button><button class="secondary" onclick="cryptoAction('decrypt')">DECRYPT</button></div><div id="cryptoOut" class="output"></div></div><div class="panel"><h4>Data Protection Locker</h4><input id="vaultName" placeholder="Vault name"><textarea id="vaultNote" placeholder="Sensitive note"></textarea><div class="row"><button class="primary" onclick="saveVault()">SAVE ENCRYPTED</button><button class="secondary" onclick="getVault()">RETRIEVE</button></div><div id="vaultOut" class="output"></div></div></div>
+      <!-- Tab Navigation for Crypto Tools -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchCryptoTab('tabAes')">AES-256 Multi-Mode</button>
+        <button class="tab-btn" onclick="switchCryptoTab('tabRsa')">RSA-2048 Asymmetric &amp; Signatures</button>
+        <button class="tab-btn" onclick="switchCryptoTab('tabStego')">Image Steganography Lab</button>
+        <button class="tab-btn" onclick="switchCryptoTab('tabHash')">Multi-Hash Inspector</button>
+        <button class="tab-btn" onclick="switchCryptoTab('tabDh')">Diffie-Hellman Key Exchange</button>
+        <button class="tab-btn" onclick="switchCryptoTab('tabFernet')">Fernet Token Vault</button>
+      </div>
+
+      <!-- AES Tab -->
+      <div id="tabAes" class="crypto-subtab">
+        <div class="two-col">
+          <div class="panel">
+            <h4>🔐 AES-256 Symmetric Encryption (GCM / CBC)</h4>
+            <p class="muted small">Uses PBKDF2 with 100,000 iterations to derive a 256-bit key with random salt &amp; IV.</p>
+            <label class="form-label">Plaintext / Ciphertext</label>
+            <textarea id="aesText" placeholder="Enter plaintext to encrypt or base64 ciphertext to decrypt..."></textarea>
+            <label class="form-label">Secret Passphrase / Key</label>
+            <input type="password" id="aesPass" placeholder="Enter master encryption passphrase">
+            <label class="form-label">Cipher Mode</label>
+            <select id="aesMode">
+              <option value="GCM">AES-256-GCM (Authenticated Encryption with Integrity Tag)</option>
+              <option value="CBC">AES-256-CBC (PKCS#7 Padding)</option>
+            </select>
+            <div class="row" style="margin-top:12px;">
+              <button class="primary" onclick="runAes('encrypt')">AES ENCRYPT</button>
+              <button class="secondary" onclick="runAes('decrypt')">AES DECRYPT</button>
+            </div>
+          </div>
+          <div class="panel">
+            <h4>Cryptographic Output</h4>
+            <div id="aesOut" class="output">Ready for AES-256 operations...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RSA Tab -->
+      <div id="tabRsa" class="crypto-subtab hidden">
+        <div class="two-col">
+          <div class="panel">
+            <h4>🔑 RSA Asymmetric Keypair Generator</h4>
+            <p class="muted small">Generates industry-standard 2048/4096-bit RSA keys with PKCS#8 formatting.</p>
+            <div class="row">
+              <select id="rsaKeySize" style="width:160px;">
+                <option value="2048">2048-Bit RSA (Standard)</option>
+                <option value="3072">3072-Bit RSA (High Security)</option>
+                <option value="4096">4096-Bit RSA (Ultra-High)</option>
+              </select>
+              <button class="primary" onclick="generateRsaKeys()">GENERATE KEYPAIR</button>
+            </div>
+            <label class="form-label" style="margin-top:10px;">Generated Public Key (PEM)</label>
+            <textarea id="rsaPubKey" class="code-box" readonly placeholder="Public Key PEM will appear here..."></textarea>
+            <label class="form-label">Generated Private Key (PEM)</label>
+            <textarea id="rsaPrivKey" class="code-box" readonly placeholder="Private Key PEM will appear here..."></textarea>
+          </div>
+          <div class="panel">
+            <h4>✍ Digital Signature &amp; Integrity Verification</h4>
+            <p class="muted small">Sign documents using RSA-PSS with SHA-256 and verify authentic origin.</p>
+            <label class="form-label">Message / Document Content</label>
+            <textarea id="rsaMsg" placeholder="Enter message to digitally sign..."></textarea>
+            <label class="form-label">Digital Signature (Base64)</label>
+            <textarea id="rsaSig" class="code-box" placeholder="Digital signature will appear here or paste to verify..."></textarea>
+            <div class="row" style="margin-top:10px;">
+              <button class="primary" onclick="runRsaSign()">SIGN MESSAGE</button>
+              <button class="secondary" onclick="runRsaVerify()">VERIFY SIGNATURE</button>
+            </div>
+            <div id="rsaOut" class="output" style="margin-top:10px;">Ready for digital signature operations.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steganography Tab -->
+      <div id="tabStego" class="crypto-subtab hidden">
+        <div class="two-col">
+          <div class="panel">
+            <h4>🖼 Hide Secret in Image (LSB Steganography)</h4>
+            <p class="muted small">Embeds encrypted text payloads into the Least Significant Bits of pixel channels.</p>
+            <label class="form-label">Carrier Image (PNG / JPEG / BMP)</label>
+            <input type="file" id="stegoImgEmbed" accept="image/*">
+            <label class="form-label">Secret Payload Message</label>
+            <textarea id="stegoSecret" placeholder="Enter confidential message to conceal inside the image pixels..."></textarea>
+            <button class="primary" onclick="embedStego()">EMBED &amp; DOWNLOAD STEGO IMAGE</button>
+            <div id="stegoEmbedMsg" class="tool-result"></div>
+          </div>
+          <div class="panel">
+            <h4>🔍 Extract Secret Payload from Image</h4>
+            <p class="muted small">Scans image pixel LSB matrices to reconstruct concealed payloads.</p>
+            <label class="form-label">Stego Carrier Image</label>
+            <input type="file" id="stegoImgExtract" accept="image/*">
+            <button class="primary" onclick="extractStego()">EXTRACT HIDDEN SECRET</button>
+            <div id="stegoExtractOut" class="output" style="margin-top:12px;">Payload inspection output will appear here...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multi-Hash Tab -->
+      <div id="tabHash" class="crypto-subtab hidden">
+        <div class="panel">
+          <h4>📊 Multi-Algorithm Cryptographic Hash Inspector</h4>
+          <p class="muted small">Computes SHA-256, SHA-512, SHA3-256 (Keccak), BLAKE2b, and MD5 side-by-side with entropy metrics.</p>
+          <textarea id="hashInput" placeholder="Enter text or string to calculate cryptographic digests across all algorithms..."></textarea>
+          <button class="primary" onclick="calculateMultiHash()" style="margin-top:10px;">CALCULATE ALL HASHES</button>
+          <div id="hashOut" class="output" style="margin-top:15px;">Enter text above to inspect cryptographic hash algorithms.</div>
+        </div>
+      </div>
+
+      <!-- Diffie-Hellman Tab -->
+      <div id="tabDh" class="crypto-subtab hidden">
+        <div class="panel">
+          <h4>🤝 Diffie-Hellman Key Exchange Protocol Simulator</h4>
+          <p class="muted small">Step-by-step mathematical demonstration of asynchronous shared secret derivation over untrusted channels.</p>
+          <button class="primary" onclick="runDiffieHellman()">SIMULATE DIFFIE-HELLMAN KEY EXCHANGE</button>
+          <div id="dhOut" class="output" style="margin-top:15px;">Click button above to simulate secure key exchange.</div>
+        </div>
+      </div>
+
+      <!-- Fernet Tab -->
+      <div id="tabFernet" class="crypto-subtab hidden">
+        <div class="two-col">
+          <div class="panel">
+            <h4>🔑 Fernet Symmetric Token Engine</h4>
+            <textarea id="cryptoText" placeholder="Enter text to encrypt or paste a Fernet token..."></textarea>
+            <div class="row">
+              <button class="primary" onclick="cryptoAction('encrypt')">ENCRYPT</button>
+              <button class="secondary" onclick="cryptoAction('decrypt')">DECRYPT</button>
+            </div>
+            <div id="cryptoOut" class="output"></div>
+          </div>
+          <div class="panel">
+            <h4>🔐 Zero-Knowledge Encrypted Notes Locker</h4>
+            <input id="vaultName" placeholder="Vault Note Identifier (e.g. Master_Credentials)">
+            <textarea id="vaultNote" placeholder="Confidential note content..."></textarea>
+            <div class="row">
+              <button class="primary" onclick="saveVault()">SAVE ENCRYPTED</button>
+              <button class="secondary" onclick="getVault()">RETRIEVE NOTE</button>
+            </div>
+            <div id="vaultOut" class="output"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="tools" class="page"><div class="section-head"><div><span class="eyebrow">CO5 • EXPOSURE CHECKS</span><h3>Security Tools</h3></div></div>
-      <div class="two-col"><div class="panel"><h4>📡 Wi-Fi Security</h4><div class="select-grid"> <button onclick="wifi('Open')">Open</button><button onclick="wifi('WEP')">WEP</button><button onclick="wifi('WPA')">WPA</button><button onclick="wifi('WPA2')">WPA2</button><button onclick="wifi('WPA3')">WPA3</button></div><div id="wifiOut" class="tool-result"></div></div><div class="panel"><h4>📱 App Permission Risk</h4><p class="muted small">Example: camera, contacts, sms, location, microphone</p><input id="permissions" placeholder="camera, contacts, location"><button class="primary" onclick="permissionsCheck()">CHECK PERMISSIONS</button><div id="permOut" class="tool-result"></div></div></div>
+    <!-- 4. DATA LOSS PREVENTION (DLP) & PRIVACY VAULT -->
+    <section id="dlp" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">DATA PROTECTION &amp; SANITIZATION</span>
+          <h3>Data Loss Prevention (DLP) &amp; Privacy Vault</h3>
+          <p class="muted">Protect sensitive information against accidental leakage. Automatically detect and redact Personally Identifiable Information (PII) including Aadhaar (Verhoeff Checksum), PAN, Credit Cards (Luhn Algorithm), and API tokens. Sanitize files using the DoD 5220.22-M military wipe standard.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <!-- Live DLP Scanner -->
+        <div class="panel">
+          <h4>🛡 Automated PII Redaction &amp; DLP Engine</h4>
+          <p class="muted small">Real-time inspection and masking of Aadhaar, PAN, Credit Cards, Secrets, Passwords, and Phone numbers.</p>
+          <textarea id="dlpInput" placeholder="Paste sensitive text, logs, customer data, or source code containing Aadhaar (e.g. 5489 1234 8921), PAN (e.g. ABCDE1234F), Credit Cards, API keys, or credentials..."></textarea>
+          <button class="primary" onclick="runDlpScan()" style="margin-top:10px;">SCAN &amp; REDACT SENSITIVE PII</button>
+          <div id="dlpOut" class="output" style="margin-top:12px;">DLP scanner results will appear here...</div>
+        </div>
+
+        <!-- DoD File Shredder -->
+        <div class="panel">
+          <h4>🌪 DoD 5220.22-M Secure File Sanitizer (Shredder)</h4>
+          <p class="muted small">Simulates military-grade multi-pass cryptographic data purging to render magnetic traces unrecoverable.</p>
+          <label class="form-label">Target File Name</label>
+          <input id="shredFilename" placeholder="customer_financial_records.dat" value="confidential_audit_log.dat">
+          <label class="form-label">Simulated File Size (KB)</label>
+          <input type="number" id="shredSize" value="128" min="1" max="1024">
+          <label class="form-label">Sanitization Passes</label>
+          <select id="shredPasses">
+            <option value="3">3-Pass DoD 5220.22-M (Zeros, Ones, Random Stream)</option>
+            <option value="7">7-Pass DoD 5220.22-M (ECE Extended Military Standard)</option>
+          </select>
+          <button class="primary" onclick="runShredder()" style="margin-top:12px;">EXECUTE SECURE SANITIZATION PURGE</button>
+          <div id="shredOut" class="output" style="margin-top:12px;">Ready for secure file destruction.</div>
+        </div>
+      </div>
     </section>
 
-    <section id="response" class="page"><div class="section-head"><div><span class="eyebrow">GUIDED RESPONSE MODE</span><h3>I think I've been hacked</h3><p class="muted">Choose what happened. LexGuard gives you a focused first-response checklist.</p></div></div><div class="scenario-grid"><button onclick="scenario('Phishing')">📩 Suspicious message</button><button onclick="scenario('Hacking/Unauthorized Access')">🔓 Account hacked</button><button onclick="scenario('Online Fraud')">💳 Money stolen</button><button onclick="scenario('Malware-link')">🦠 Device infected</button><button onclick="scenario('Identity Theft')">🪪 Identity misuse</button><button onclick="scenario('Cyberstalking')">👁 Online stalking</button><button onclick="scenario('Data Theft')">🗃 Data leaked</button><button onclick="scenario('Unclear')">❓ Something else</button></div><div id="scenarioOut" class="scenario-output hidden"></div></section>
+    <!-- 5. DIGITAL EVIDENCE VAULT -->
+    <section id="evidence" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">DIGITAL FORENSICS • SHA-256 TAMPER VERIFICATION</span>
+          <h3>Digital Evidence Vault &amp; Chain of Custody</h3>
+          <p class="muted">Forensically preserve digital artifacts. Every ingested file receives a cryptographic SHA-256 fingerprint, immutable custody logs, and live tamper-verification checking.</p>
+        </div>
+      </div>
 
-    <section id="investigate" class="page"><div class="section-head"><div><span class="eyebrow">CASE MANAGEMENT • IOC • MITRE • AUDIT</span><h3>Investigation Center</h3><p class="muted">Search incidents, inspect extracted indicators, verify audit chains and export complete forensic case packages.</p></div></div><div class="panel"><div class="row"><input id="caseSearch" placeholder="Search Incident ID, threat, offence or IOC"><button class="primary" onclick="loadCases()">SEARCH CASES</button></div><div id="caseList" class="case-list">Loading...</div></div><div class="two-col" style="margin-top:18px"><div class="panel"><h4>IOC Investigation</h4><div class="row"><select id="iocType"><option value="">All types</option><option>IPv4</option><option>URL</option><option>Domain</option><option>Email</option><option>MD5</option><option>SHA-1</option><option>SHA-256</option></select><input id="iocSearch" placeholder="Search IOC"><button class="secondary" onclick="loadIocs()">FILTER</button></div><div id="iocList" class="evidence-list"></div></div><div class="panel"><h4>Selected Case</h4><div id="caseDetail" class="output">Select an incident above.</div></div></div></section>
-<section id="lab" class="page"><div class="section-head"><div><span class="eyebrow">LOCAL SECURITY ANALYSIS</span><h3>Security Lab</h3><p class="muted">Offline tools for URL triage, static file triage and password-strength education.</p></div></div><div class="two-col"><div class="panel"><h4>⌕ Advanced URL Analyzer</h4><input id="urlInput" placeholder="https://example.com/login"><button class="primary" onclick="analyzeUrl()">ANALYZE URL</button><div id="urlOut" class="tool-result"></div></div><div class="panel"><h4>▣ Static File Triage</h4><input type="file" id="labFile"><button class="primary" onclick="analyzeFile()">ANALYZE FILE</button><div id="fileOut" class="tool-result"></div></div></div><div class="panel" style="margin-top:18px"><h4>🔐 Password Security Lab</h4><div class="row"><input id="passwordInput" type="password" placeholder="Demo password — never stored"><button class="primary" onclick="analyzePassword()">ANALYZE PASSWORD</button></div><div id="passwordOut" class="tool-result"></div></div></section>
-<section id="simulator" class="page"><div class="section-head"><div><span class="eyebrow">DEMO / SIMULATION MODE</span><h3>Cyber Attack Scenario Simulator</h3><p class="muted">Controlled sample scenarios for fast, repeatable professor demonstrations. No real attack is performed.</p></div></div><div class="scenario-grid"><button onclick="runSimulation('Phishing')">📩 Phishing Attack</button><button onclick="runSimulation('Ransomware')">🔒 Ransomware Attack</button><button onclick="runSimulation('Online Fraud')">💳 Online Fraud</button><button onclick="runSimulation('Identity Theft')">🪪 Identity Theft</button><button onclick="runSimulation('Malware')">🦠 Malware Infection</button></div><div id="simulationOut" class="panel hidden" style="margin-top:18px"></div></section>
-<footer>LEXGUARD • Educational cybersecurity project • Rule-based local processing • Legal information is educational, not legal advice.</footer>
+      <div class="two-col">
+        <div class="panel">
+          <h4>＋ Ingest Digital Evidence</h4>
+          <input id="evidenceIncident" placeholder="Incident ID (optional — e.g. LG-20260930-ABC123)">
+          <input type="file" id="evidenceFile">
+          <textarea id="evidenceNote" placeholder="Examiner forensic notes / extraction location / source device"></textarea>
+          <button class="primary" onclick="uploadEvidence()">SECURE EVIDENCE ARTIFACT</button>
+          <div id="evidenceMsg"></div>
+        </div>
+
+        <div class="panel">
+          <h4>◈ Forensic Evidence Inventory</h4>
+          <div id="evidenceList" class="evidence-list">Loading evidence catalog...</div>
+        </div>
+      </div>
+
+      <div id="custodyPanel" class="panel hidden" style="margin-top:20px;"></div>
+    </section>
+
+    <!-- 6. CYBER LAW, FIR & STATUTORY COMPLIANCE -->
+    <section id="legal" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">STATUTORY PROVISIONS &amp; COURT-ADMISSIBLE REPORTING</span>
+          <h3>Cyber Law &amp; Legal Enforcement Center</h3>
+          <p class="muted">Bridge technical cyber offences with statutory legal frameworks: Information Technology Act 2000, Bharatiya Nyaya Sanhita (BNS) 2023, and DPDP Act 2023. Generate formal Cyber Crime FIR complaints and Section 65B Electronic Evidence Certificates for court admissibility.</p>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchLegalTab('tabFir')">Formal Cyber Crime FIR Generator</button>
+        <button class="tab-btn" onclick="switchLegalTab('tab65b')">Section 65B / 63 Court Evidence Certificate</button>
+        <button class="tab-btn" onclick="switchLegalTab('tabStatute')">Statutory Legal Code Reference</button>
+      </div>
+
+      <!-- FIR Generator Tab -->
+      <div id="tabFir" class="legal-subtab">
+        <div class="two-col">
+          <div class="panel">
+            <h4>📝 Cyber Crime FIR &amp; Police Complaint Builder</h4>
+            <p class="muted small">Generates a formal, court-grade Cyber Crime Police Complaint addressed to the Cyber Cell / National Portal (cybercrime.gov.in).</p>
+            <label class="form-label">Complainant / Organization Name</label>
+            <input id="firComplainant" placeholder="Full legal name of victim / authorized officer" value="Cyber Security Operations Team">
+            <label class="form-label">Contact Details (Phone / Email)</label>
+            <input id="firContact" placeholder="+91-9876543210 / officer@security.org" value="+91-9876543210">
+            <label class="form-label">Offence Classification</label>
+            <select id="firOffence">
+              <option value="Online Financial Fraud">Online Financial Fraud (UPI / Net Banking / Card)</option>
+              <option value="Hacking/Unauthorized Access">Hacking / Unauthorized Computer Access</option>
+              <option value="Identity Theft">Identity Theft / Impersonation (Aadhaar/PAN/Social)</option>
+              <option value="Cyberstalking/Harassment">Cyberstalking &amp; Online Harassment</option>
+              <option value="Corporate Data Theft/Exfiltration">Corporate Data Theft &amp; Exfiltration</option>
+              <option value="SIM Swapping/Telecom Fraud">SIM Swapping &amp; 2FA Hijacking</option>
+            </select>
+            <label class="form-label">Disputed Financial Loss (if any)</label>
+            <input id="firLoss" placeholder="e.g. ₹1,50,000 (INR) via unauthorized UPI transfer" value="₹1,50,000 (INR)">
+            <label class="form-label">Suspect Leads / Known Handles / VPA</label>
+            <input id="firSuspect" placeholder="Suspect phone, fake website, IP address, or UPI ID">
+            <label class="form-label">Incident Facts Summary</label>
+            <textarea id="firFacts" placeholder="Describe the chronological sequence of events..."></textarea>
+            <button class="primary" onclick="generateFirDraft()">GENERATE FORMAL POLICE COMPLAINT</button>
+          </div>
+
+          <div class="panel">
+            <h4>Official Complaint Document Output</h4>
+            <div id="firOut" class="output code-box" style="white-space:pre-wrap; min-height:450px;">Fill in details on the left and click 'Generate' to create a formal police complaint application.</div>
+            <div class="row" style="margin-top:12px;">
+              <button class="secondary" onclick="copyToClipboard('firOut')">📋 COPY COMPLAINT</button>
+              <button class="primary" onclick="window.print()">🖨 PRINT FORMAL DRAFT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 65B Certificate Tab -->
+      <div id="tab65b" class="legal-subtab hidden">
+        <div class="two-col">
+          <div class="panel">
+            <h4>⚖ Section 65B (IEA) / Section 63 (BSA) Digital Evidence Certificate</h4>
+            <p class="muted small">Mandatory legal affidavit for proving the authenticity, machine operating integrity, and cryptographic hash verification of digital evidence in court.</p>
+            <label class="form-label">Examiner / Certifying Authority Name</label>
+            <input id="certExaminer" value="Senior Digital Forensics Examiner">
+            <label class="form-label">Organization / Investigation Unit</label>
+            <input id="certOrg" value="LexGuard Cyber Forensics &amp; Legal Response Unit">
+            <label class="form-label">Associated Incident ID</label>
+            <input id="certIncident" placeholder="e.g. LG-20260930-1A2B3C">
+            <button class="primary" onclick="generate65bCertificate()" style="margin-top:12px;">GENERATE SECTION 65B CERTIFICATE</button>
+          </div>
+
+          <div class="panel">
+            <h4>Forensic Certificate Preview</h4>
+            <div id="certOut" class="output code-box" style="white-space:pre-wrap; min-height:450px;">Click 'Generate' to produce the formal Section 65B digital evidence certificate.</div>
+            <div class="row" style="margin-top:12px;">
+              <button class="secondary" onclick="copyToClipboard('certOut')">📋 COPY CERTIFICATE</button>
+              <button class="primary" onclick="window.print()">🖨 PRINT CERTIFICATE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statutory Reference Tab -->
+      <div id="tabStatute" class="legal-subtab hidden">
+        <div class="panel">
+          <h4>📚 Cyber Law &amp; Statutory Penal Provisions Matrix</h4>
+          <div class="statute-grid">
+            <div class="statute-card">
+              <h5>Section 43 read with Section 66 (IT Act)</h5>
+              <p><b>Offence:</b> Unauthorized Access, Downloading, or Extracting Computer Data.</p>
+              <p><b>Penalty:</b> Imprisonment up to 3 years and/or fine up to ₹5,00,000.</p>
+            </div>
+            <div class="statute-card">
+              <h5>Section 66C (IT Act)</h5>
+              <p><b>Offence:</b> Identity Theft &amp; Dishonest Use of Passwords / Electronic Signatures / Biometrics.</p>
+              <p><b>Penalty:</b> Imprisonment up to 3 years and fine up to ₹1,00,000.</p>
+            </div>
+            <div class="statute-card">
+              <h5>Section 66D (IT Act)</h5>
+              <p><b>Offence:</b> Cheating by Personation using Computer Resources / Communication Devices.</p>
+              <p><b>Penalty:</b> Imprisonment up to 3 years and fine up to ₹1,00,000.</p>
+            </div>
+            <div class="statute-card">
+              <h5>Section 66F (IT Act)</h5>
+              <p><b>Offence:</b> Cyber Terrorism &amp; Attacks on Critical Information Infrastructure (CII).</p>
+              <p><b>Penalty:</b> Imprisonment for Life.</p>
+            </div>
+            <div class="statute-card">
+              <h5>Section 72A (IT Act) &amp; DPDP Act 2023</h5>
+              <p><b>Offence:</b> Disclosure of Information in Breach of Lawful Contract &amp; Data Fiduciary Default.</p>
+              <p><b>Penalty:</b> Up to 3 years imprisonment or penalties up to ₹250 Crores under DPDP Act.</p>
+            </div>
+            <div class="statute-card">
+              <h5>Bharatiya Nyaya Sanhita (BNS) 2023</h5>
+              <p><b>Offence:</b> Section 318(4) (Cheating) &amp; Section 319 (Personation) &amp; Section 78 (Stalking).</p>
+              <p><b>Application:</b> Parallel criminal prosecution alongside Information Technology Act.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. WIRELESS & MOBILE THREAT RADAR -->
+    <section id="wireless" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">PERIMETER EXPOSURE &amp; ENDPOINT RISKS</span>
+          <h3>Wireless &amp; Mobile Threat Radar</h3>
+          <p class="muted">Inspect wireless 802.11 security protocols, detect rogue Access Points (Evil Twin / Pineapple) and evaluate Android APK manifest permissions against high-risk malware attack vectors.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <!-- Wi-Fi Radar -->
+        <div class="panel">
+          <h4>📡 Wi-Fi Protocol Security Evaluator</h4>
+          <p class="muted small">Select an 802.11 Wi-Fi security standard to evaluate cryptographic resilience and attack vectors.</p>
+          <div class="select-grid">
+            <button onclick="wifi('Open')">Open (Unsecured)</button>
+            <button onclick="wifi('WEP')">WEP (Obsolete RC4)</button>
+            <button onclick="wifi('WPA')">WPA (TKIP)</button>
+            <button onclick="wifi('WPA2')">WPA2 (CCMP/AES)</button>
+            <button onclick="wifi('WPA3')">WPA3 (SAE Dragonfly)</button>
+          </div>
+          <div id="wifiOut" class="tool-result"></div>
+        </div>
+
+        <!-- Android Permission Scanner -->
+        <div class="panel">
+          <h4>📱 Android App Permission &amp; Malware Profiler</h4>
+          <p class="muted small">Enter requested permissions or AndroidManifest.xml tags to analyze dangerous combinations (e.g. OTP Interception, Spyware, Accessibility Keylogger).</p>
+          <input id="permissions" placeholder="e.g. camera, contacts, sms, location, storage, microphone" value="sms, camera, location, storage">
+          <button class="primary" onclick="permissionsCheck()">ANALYZE PERMISSION ATTACK VECTORS</button>
+          <div id="permOut" class="tool-result"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. INCIDENT RESPONSE CENTER -->
+    <section id="response" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">IMMEDIATE CONTAINMENT WORKFLOWS</span>
+          <h3>SOC Incident Response Center</h3>
+          <p class="muted">Select an active security emergency scenario to access step-by-step containment procedures, forensics preservation guidelines, and immediate remediation playbooks.</p>
+        </div>
+      </div>
+
+      <div class="scenario-grid">
+        <button onclick="scenario('Phishing')">📩 Phishing / Credential Theft</button>
+        <button onclick="scenario('Hacking/Unauthorized Access')">🔓 Compromised Account / Host</button>
+        <button onclick="scenario('Online Fraud')">💳 Financial / Banking Fraud</button>
+        <button onclick="scenario('Ransomware')">🔒 Active Ransomware Outbreak</button>
+        <button onclick="scenario('Malware-link')">🦠 Malware / Trojan Infection</button>
+        <button onclick="scenario('Identity Theft')">🪪 Identity Misuse &amp; Forgery</button>
+        <button onclick="scenario('Cyberstalking')">👁 Cyberstalking / Extortion</button>
+        <button onclick="scenario('Data Theft')">🗃 Corporate Data Exfiltration</button>
+      </div>
+
+      <div id="scenarioOut" class="scenario-output hidden"></div>
+    </section>
+
+    <!-- 9. INVESTIGATION & CASE MANAGEMENT -->
+    <section id="investigate" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">FORENSIC AUDITING • IOC CORRELATION</span>
+          <h3>Investigation Center &amp; Case Management</h3>
+          <p class="muted">Query historical cases, inspect correlated Indicators of Compromise (IOCs), cryptographically verify the audit hash-chain, and export complete forensic case bundles (ZIP).</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="row">
+          <input id="caseSearch" placeholder="Search by Incident ID, Threat Vector, Offence, or IOC artifact...">
+          <button class="primary" onclick="loadCases()">SEARCH CASES</button>
+        </div>
+        <div id="caseList" class="case-list">Loading cases...</div>
+      </div>
+
+      <div class="two-col" style="margin-top:20px;">
+        <div class="panel">
+          <h4>IOC Threat Investigation</h4>
+          <div class="row">
+            <select id="iocType" style="width:140px;">
+              <option value="">All Types</option>
+              <option>IPv4</option>
+              <option>URL</option>
+              <option>Domain</option>
+              <option>Email</option>
+              <option>Crypto Wallet</option>
+              <option>UPI VPA</option>
+              <option>SHA-256</option>
+              <option>MD5</option>
+            </select>
+            <input id="iocSearch" placeholder="Filter IOCs...">
+            <button class="secondary" onclick="loadIocs()">FILTER</button>
+          </div>
+          <div id="iocList" class="evidence-list"></div>
+        </div>
+
+        <div class="panel">
+          <h4>Selected Incident Dossier</h4>
+          <div id="caseDetail" class="output">Select an incident from the case list above to inspect timeline, playbook, and audit verification.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. SECURITY TRIAGE LAB -->
+    <section id="lab" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">LOCAL STATIC ANALYSIS</span>
+          <h3>Security Triage Lab</h3>
+          <p class="muted">Air-gapped tools for suspicious URL deconstruction, binary entropy calculation, and password security analysis.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="panel">
+          <h4>⌕ Advanced URL / Domain Triage</h4>
+          <input id="urlInput" placeholder="https://sbi-account-security-update.com@phishing.in/login">
+          <button class="primary" onclick="analyzeUrl()">ANALYZE URL STRUCTURE</button>
+          <div id="urlOut" class="tool-result"></div>
+        </div>
+
+        <div class="panel">
+          <h4>▣ Static Binary File Triage</h4>
+          <input type="file" id="labFile">
+          <button class="primary" onclick="analyzeFile()">ANALYZE FILE PROFILE &amp; ENTROPY</button>
+          <div id="fileOut" class="tool-result"></div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <h4>🔐 Password Entropy &amp; Complexity Inspector</h4>
+        <div class="row">
+          <input id="passwordInput" type="password" placeholder="Enter password to test entropy (never stored or transmitted)">
+          <button class="primary" onclick="analyzePassword()">ANALYZE PASSWORD STRENGTH</button>
+        </div>
+        <div id="passwordOut" class="tool-result"></div>
+      </div>
+    </section>
+
+    <!-- 11. ATTACK SIMULATOR -->
+    <section id="simulator" class="page">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">CONTROLLED CYBER LAB SCENARIOS</span>
+          <h3>Cyber Attack Scenario Simulator</h3>
+          <p class="muted">Simulate real-world cyber attack telemetry in a controlled sandbox to demonstrate threat classification, IOC extraction, MITRE mapping, and automatic statutory legal mapping.</p>
+        </div>
+      </div>
+
+      <div class="scenario-grid">
+        <button onclick="runSimulation('Phishing')">📩 Phishing Attack (KYC / OTP)</button>
+        <button onclick="runSimulation('Ransomware')">🔒 Ransomware Extortion</button>
+        <button onclick="runSimulation('Financial Fraud')">💳 Online Financial Fraud (UPI)</button>
+        <button onclick="runSimulation('Identity Theft')">🪪 Identity Theft &amp; Impersonation</button>
+        <button onclick="runSimulation('Malware')">🦠 Malicious Payload Execution</button>
+        <button onclick="runSimulation('Web Attack')">⚡ SQL Injection / Web Attack</button>
+        <button onclick="runSimulation('SIM Swap')">📶 SIM Swapping Fraud</button>
+      </div>
+
+      <div id="simulationOut" class="panel hidden" style="margin-top:20px;"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      LEXGUARD CYBER DEFENSE &amp; LEGAL FORENSICS PLATFORM • Enterprise Security Operations &amp; Incident Management Suite.
+    </footer>
   </main>
 </div>
-<script src="/static/app.js"></script></body></html>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

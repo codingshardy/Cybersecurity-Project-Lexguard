@@ -713,5 +713,520 @@
       }
     ],
     "response_progress": 0
+  },
+  {
+    "incident_id": "LG-20260909-AC8A33",
+    "timestamp": "09 Sep 2026, 02:22 AM",
+    "input": "Download invoice.exe from this link and install it to view the document.",
+    "threat": {
+      "classification": "Malware-link",
+      "risk": "High",
+      "score:": 80,
+      "score": 80,
+      "triggers": [
+        "download",
+        ".exe"
+      ],
+      "why": [
+        "Potentially risky file/download language detected."
+      ],
+      "response": [
+        "Do not open or execute the file.",
+        "If already opened, disconnect the device from networks if safe.",
+        "Run trusted security scans and update the operating system.",
+        "Preserve the suspicious URL/file as evidence.",
+        "Change credentials if compromise is suspected."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "High",
+    "score": 80,
+    "severity": "HIGH",
+    "priority": "P2",
+    "severity_reason": "Base risk score is 80/100. 1 IOC(s) were extracted. Malware/impact behavior increases urgency.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Do not open or execute the file.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "If already opened, disconnect the device from networks if safe.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Run trusted security scans and update the operating system.",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Preserve the suspicious URL/file as evidence.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Change credentials if compromise is suspected.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Malware-link Response Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Do not open or execute the file.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "If already opened, disconnect the device from networks if safe.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Run trusted security scans and update the operating system.",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Preserve the suspicious URL/file as evidence.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Change credentials if compromise is suspected.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "Domain",
+        "value": "invoice.exe"
+      }
+    ],
+    "mitre": [
+      {
+        "id": "T1204.002",
+        "name": "User Execution: Malicious File",
+        "why": "The incident involves a potentially malicious file or executable."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-09T02:22:18",
+        "action": "Incident Created",
+        "description": "LexGuard recorded this incident event."
+      }
+    ],
+    "response_progress": 0
+  },
+  {
+    "incident_id": "LG-20260929-45054E",
+    "timestamp": "29 Sep 2026, 10:50 PM",
+    "input": "URGENT: Your SBI account is suspended. Click here: http://sbi-kyc.in to verify OTP and Aadhaar: 5489 1234 8921",
+    "threat": {
+      "classification": "Phishing",
+      "risk": "Critical",
+      "score": 99,
+      "triggers": [
+        "click here",
+        "urgent",
+        "otp",
+        "suspended",
+        "kyc"
+      ],
+      "why": [
+        "High-pressure urgency or account-coercion psychological trigger detected.",
+        "Direct credential harvesting or personal identification capture attempt.",
+        "Hyperlink redirection indicator detected."
+      ],
+      "response": [
+        "Do not click the suspicious link, download any attachments, or enter passwords.",
+        "If credentials were submitted, immediately change passwords from a verified official device.",
+        "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+        "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+        "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Critical",
+    "score": 99,
+    "severity": "CRITICAL",
+    "priority": "P1 (Immediate Containment)",
+    "severity_reason": "High heuristic threat score (99/100). 2 Indicator(s) of Compromise extracted.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Do not click the suspicious link, download any attachments, or enter passwords.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "If credentials were submitted, immediately change passwords from a verified official device.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Phishing Containment & Remediation Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Do not click the suspicious link, download any attachments, or enter passwords.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "If credentials were submitted, immediately change passwords from a verified official device.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "URL",
+        "value": "http://sbi-kyc.in"
+      },
+      {
+        "type": "Domain",
+        "value": "sbi-kyc.in"
+      }
+    ],
+    "mitre": [
+      {
+        "id": "T1566",
+        "name": "Phishing",
+        "tactic": "Initial Access",
+        "why": "Adversary uses targeted messages and fraudulent links to elicit credentials or access."
+      },
+      {
+        "id": "T1566.002",
+        "name": "Spearphishing Link",
+        "tactic": "Initial Access",
+        "why": "Suspicious URL pointing to adversary-controlled lure infrastructure."
+      },
+      {
+        "id": "T1056.002",
+        "name": "GUI Input Capture / Credential Harvesting",
+        "tactic": "Credential Access",
+        "why": "Adversary prompts victim to input secret authentication tokens or PII."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-29T22:50:53",
+        "action": "Incident Analyzed & Registered",
+        "description": "LexGuard Security Engine recorded this incident activity."
+      }
+    ],
+    "response_progress": 0,
+    "evidence": []
+  },
+  {
+    "incident_id": "LG-20260929-4C61ED",
+    "timestamp": "29 Sep 2026, 10:52 PM",
+    "input": "URGENT: Your SBI account is suspended. Click here: http://sbi-kyc.in to verify OTP and Aadhaar: 5489 1234 8921",
+    "threat": {
+      "classification": "Phishing",
+      "risk": "Critical",
+      "score": 99,
+      "triggers": [
+        "click here",
+        "urgent",
+        "otp",
+        "suspended",
+        "kyc"
+      ],
+      "why": [
+        "High-pressure urgency or account-coercion psychological trigger detected.",
+        "Direct credential harvesting or personal identification capture attempt.",
+        "Hyperlink redirection indicator detected."
+      ],
+      "response": [
+        "Do not click the suspicious link, download any attachments, or enter passwords.",
+        "If credentials were submitted, immediately change passwords from a verified official device.",
+        "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+        "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+        "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Critical",
+    "score": 99,
+    "severity": "CRITICAL",
+    "priority": "P1 (Immediate Containment)",
+    "severity_reason": "High heuristic threat score (99/100). 2 Indicator(s) of Compromise extracted.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Do not click the suspicious link, download any attachments, or enter passwords.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "If credentials were submitted, immediately change passwords from a verified official device.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Phishing Containment & Remediation Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Do not click the suspicious link, download any attachments, or enter passwords.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "If credentials were submitted, immediately change passwords from a verified official device.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "URL",
+        "value": "http://sbi-kyc.in"
+      },
+      {
+        "type": "Domain",
+        "value": "sbi-kyc.in"
+      }
+    ],
+    "mitre": [
+      {
+        "id": "T1566",
+        "name": "Phishing",
+        "tactic": "Initial Access",
+        "why": "Adversary uses targeted messages and fraudulent links to elicit credentials or access."
+      },
+      {
+        "id": "T1566.002",
+        "name": "Spearphishing Link",
+        "tactic": "Initial Access",
+        "why": "Suspicious URL pointing to adversary-controlled lure infrastructure."
+      },
+      {
+        "id": "T1056.002",
+        "name": "GUI Input Capture / Credential Harvesting",
+        "tactic": "Credential Access",
+        "why": "Adversary prompts victim to input secret authentication tokens or PII."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-29T22:52:18",
+        "action": "Incident Analyzed & Registered",
+        "description": "LexGuard Security Engine recorded this incident activity."
+      }
+    ],
+    "response_progress": 0,
+    "evidence": []
+  },
+  {
+    "incident_id": "LG-20260930-53A22C",
+    "timestamp": "30 Sep 2026, 01:36 AM",
+    "input": "URGENT: Your State Bank account has been suspended due to pending KYC. Click here immediately to verify your Aadhaar and OTP: http://sbi-kyc-verify-portal.in/login.php",
+    "threat": {
+      "classification": "Phishing",
+      "risk": "Critical",
+      "score": 99,
+      "triggers": [
+        "click here",
+        "login",
+        "urgent",
+        "otp",
+        "suspended",
+        "kyc"
+      ],
+      "why": [
+        "High-pressure urgency or account-coercion psychological trigger detected.",
+        "Direct credential harvesting or personal identification capture attempt.",
+        "Hyperlink redirection indicator detected."
+      ],
+      "response": [
+        "Do not click the suspicious link, download any attachments, or enter passwords.",
+        "If credentials were submitted, immediately change passwords from a verified official device.",
+        "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+        "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+        "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in."
+      ]
+    },
+    "offence": "Unclear",
+    "offence_triggers": [],
+    "risk": "Critical",
+    "score": 99,
+    "severity": "CRITICAL",
+    "priority": "P1 (Immediate Containment)",
+    "severity_reason": "High heuristic threat score (99/100). 3 Indicator(s) of Compromise extracted.",
+    "legal": null,
+    "response": [
+      {
+        "id": 1,
+        "text": "Do not click the suspicious link, download any attachments, or enter passwords.",
+        "done": false
+      },
+      {
+        "id": 2,
+        "text": "If credentials were submitted, immediately change passwords from a verified official device.",
+        "done": false
+      },
+      {
+        "id": 3,
+        "text": "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+        "done": false
+      },
+      {
+        "id": 4,
+        "text": "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+        "done": false
+      },
+      {
+        "id": 5,
+        "text": "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in.",
+        "done": false
+      }
+    ],
+    "playbook": {
+      "name": "Phishing Containment & Remediation Playbook",
+      "steps": [
+        {
+          "id": 1,
+          "text": "Do not click the suspicious link, download any attachments, or enter passwords.",
+          "done": false
+        },
+        {
+          "id": 2,
+          "text": "If credentials were submitted, immediately change passwords from a verified official device.",
+          "done": false
+        },
+        {
+          "id": 3,
+          "text": "Enable Hardware Security Key or Authenticator App MFA (avoid SMS MFA where possible).",
+          "done": false
+        },
+        {
+          "id": 4,
+          "text": "Preserve raw email headers, SMS screenshots, sender phone/email, and URL for forensics.",
+          "done": false
+        },
+        {
+          "id": 5,
+          "text": "Report incident to CERT-In (incident@cert-in.org.in) and cybercrime.gov.in.",
+          "done": false
+        }
+      ]
+    },
+    "iocs": [
+      {
+        "type": "URL",
+        "value": "http://sbi-kyc-verify-portal.in/login.php"
+      },
+      {
+        "type": "Domain",
+        "value": "sbi-kyc-verify-portal.in"
+      },
+      {
+        "type": "Domain",
+        "value": "login.php"
+      }
+    ],
+    "mitre": [
+      {
+        "id": "T1566",
+        "name": "Phishing",
+        "tactic": "Initial Access",
+        "why": "Adversary uses targeted messages and fraudulent links to elicit credentials or access."
+      },
+      {
+        "id": "T1566.002",
+        "name": "Spearphishing Link",
+        "tactic": "Initial Access",
+        "why": "Suspicious URL pointing to adversary-controlled lure infrastructure."
+      },
+      {
+        "id": "T1056.002",
+        "name": "GUI Input Capture / Credential Harvesting",
+        "tactic": "Credential Access",
+        "why": "Adversary prompts victim to input secret authentication tokens or PII."
+      }
+    ],
+    "timeline": [
+      {
+        "timestamp": "2026-09-30T01:36:13",
+        "action": "Incident Analyzed & Registered",
+        "description": "LexGuard Security Engine recorded this incident activity."
+      }
+    ],
+    "response_progress": 0,
+    "evidence": []
   }
 ]

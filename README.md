@@ -1,114 +1,94 @@
-# LexGuard – Cyber Threat Identification & Legal Response Advisor
+# LexGuard — Enterprise Cyber Defense & Legal Forensics Platform
 
-A Python CLI microproject for Diploma in Computer Engineering – Cyber Security. LexGuard combines rule-based cyber-threat identification, symmetric encryption, data protection, cyber-offence classification, wireless/mobile risk scoring, and educational cyber-law guidance in one offline application.
+An offline, local-first cybersecurity suite combining heuristic threat intelligence, multi-cipher cryptography, automated data loss prevention (DLP), digital evidence chain of custody, and court-admissible cyber law enforcement tools.
 
-## Course Outcome Mapping
+---
 
-| Module | Feature | CO |
-|---|---|---|
-| 1 | Threat Identifier – keyword-based phishing/ransomware/malware/social-engineering detection | CO1 – Identify software threats and attacks |
-| 2 | Crypto Vault – Fernet encryption/decryption + SHA-256 hashing | CO2 – Apply cryptographic algorithms |
-| 3 | Data Protection Locker – encrypted `.vault` notes | CO3 – Apply data protection techniques |
-| 4 | Offence Classifier – hacking, identity theft, fraud, cyberstalking, data theft | CO4 – Analyze types of cyber offences |
-| 5 | Wireless & Mobile Risk Checker – Wi-Fi and app-permission risk | CO5 – Cybercrime on wireless/mobile devices |
-| 6 | Cyber Law Mapper – educational IT Act mapping and reporting guidance | CO6 – Apply cyber law to a given issue |
+## Key Modules & Capabilities
 
-## Features
+### 1. Threat Intelligence & Incident Analysis
+- **Multi-Vector Heuristic Engine**: Real-time identification of Phishing, Ransomware, Trojan payloads, Social Engineering, and Web Application Attacks (SQLi/XSS).
+- **MITRE ATT&CK Matrix Mapping**: Automatic tagging of adversary Tactics & Techniques (e.g., T1566 Phishing, T1486 Data Encrypted for Impact, T1056 Credential Harvesting, T1190 Exploit Public Facing App).
+- **Automated IOC Extraction**: Extracts and catalogs IPv4 addresses, URLs, domains, email addresses, crypto wallets, UPI VPAs, and MD5/SHA hashes.
+- **Dynamic Containment Playbooks**: Step-by-step incident response checklists.
 
-1. **Threat Identifier:** Paste suspicious email/SMS text. The rule engine reports the highest-scoring category and matching keywords.
-2. **Crypto Vault:** Encrypt/decrypt text or files with a locally stored Fernet key. File operations also show SHA-256 hashes.
-3. **Data Protection Locker:** Stores sensitive notes as encrypted `.vault` files in `vault/`.
-4. **Offence Classifier:** Classifies an incident description and automatically launches the legal mapping.
-5. **Wireless & Mobile Risk Checker:** Scores Wi-Fi encryption or a list of app permissions.
-6. **Cyber Law Mapper:** Provides educational legal guidance and directs users to the National Cyber Crime Reporting Portal / nearest cyber cell.
+### 2. Cryptographic Security Suite
+- **AES-256 Symmetric Encryption**: Multi-mode AES (AES-256-GCM authenticated encryption and AES-256-CBC) with PBKDF2 100,000-iteration key derivation, random salts, and initialization vectors.
+- **RSA-2048 Asymmetric Cryptography**: Standard 2048/3072/4096-bit RSA keypair generation, public key distribution, and RSA-PSS with SHA-256 digital signature creation and tamper verification.
+- **Multi-Algorithm Hash Inspector**: Simultaneous computation of SHA-256, SHA-512, SHA3-256 (Keccak), BLAKE2b, and MD5 with Shannon entropy metrics.
+- **Image Steganography Studio**: Conceals secret payloads into the Least Significant Bits (LSB) of PNG image pixel matrices and extracts them intact.
+- **Diffie-Hellman Key Exchange Simulator**: Mathematical step-by-step demonstration of secure asynchronous shared secret derivation.
+- **Zero-Knowledge Encrypted Vault**: Master Fernet encrypted locker for credentials and secure notes.
 
-## Requirements
+### 3. Data Loss Prevention (DLP) & Privacy Vault
+- **Automated PII Redactor**: Inspects and sanitizes text containing:
+  - **Aadhaar Numbers** (with Verhoeff checksum validation)
+  - **PAN Cards** (Indian Income Tax identifier pattern)
+  - **Credit / Debit Cards** (with Luhn algorithm validation)
+  - **API Keys / Secrets** (GitHub tokens, AWS keys, JWT Bearer tokens)
+  - **Phone Numbers & Emails**
+- **DoD 5220.22-M Secure File Sanitizer (Shredder)**: Simulates 3-pass and 7-pass military-grade cryptographic data purging to render file magnetic traces unrecoverable.
 
-- Python 3.10 or newer
-- `cryptography`
-- Internet is **not required** for the program itself.
+### 4. Digital Evidence Vault & Chain of Custody
+- **Cryptographic Preservation**: Ingests digital evidence artifacts and registers irreversible SHA-256 fingerprints.
+- **Real-Time Tamper Verification**: Compares live byte streams against stored genesis hashes to detect any unauthorized alterations.
+- **Tamper-Evident Hash Chain Audit Log**: Cryptographically links all audit actions using a blockchain-like previous-hash verification chain.
 
-## Windows Installation
+### 5. Cyber Law Enforcement & Court-Admissible Reporting
+- **Statutory Framework Mapping**: Direct mapping of offences to:
+  - **Information Technology Act, 2000 / 2008** (Sections 43, 66, 66C, 66D, 66E, 66F, 67, 72A)
+  - **Bharatiya Nyaya Sanhita (BNS), 2023** (Sections 318, 319, 78, 303, 316) / IPC
+  - **Digital Personal Data Protection (DPDP) Act, 2023**
+- **Formal Cyber Crime Police FIR Application Generator**: Produces ready-to-file legal complaint documents with evidence seals, timeline, financial loss breakdown, and statutory citations.
+- **Section 65B (IEA) / Section 63 (BSA) Digital Evidence Certificate**: Generates legal affidavits required for court admissibility of electronic records in India.
+- **Forensic PDF Investigation Reports**: Generates detailed, professional PDF case dossiers.
 
-Open Command Prompt or PowerShell in this folder:
+### 6. Wireless & Mobile Threat Radar
+- **802.11 Wi-Fi Protocol Risk Evaluator**: Analyzes Open, WEP, WPA, WPA2, and WPA3 security profiles against Evil Twin, Deauthentication, and packet interception threats.
+- **Android Permission & Malware Profiler**: Detects dangerous permission combinations such as *SMS + Storage* (OTP Theft), *Camera + Mic + Location* (Spyware), and *Overlay + Accessibility* (Keylogging/Banking Trojan).
 
+---
+
+## Installation & Running
+
+### Prerequisites
+- Python 3.10+
+- Dependencies: `Flask`, `cryptography`, `reportlab`, `Pillow`
+
+### Quick Start (Web SOC Interface)
 ```powershell
-python -m venv venv
+# In project folder:
 venv\Scripts\activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+python app.py
+```
+Open **`http://127.0.0.1:5000`** in your browser.
+
+### Terminal CLI Interface
+```powershell
 python lexguard.py
 ```
 
-If `python` is not recognized, try `py`:
+---
 
-```powershell
-py -m venv venv
-venv\Scripts\activate
-py -m pip install -r requirements.txt
-py lexguard.py
-```
+## 5-Minute Demonstration Guide for Evaluators
 
-## First Run
-
-The application creates:
-
-- `lexguard.key` – the Fernet encryption key. **Do not delete or share it if you need to decrypt existing vaults/files.**
-- `vault/` – encrypted notes created by Module 3.
-
-## Demo Flow
-
-For a smooth viva/demo:
-
-1. Select **1**, paste a phishing sample, and show the triggered keywords.
-2. Select **2 → 1**, encrypt a short note and show the Fernet token.
-3. Select **2 → 2**, paste the token and show the original text.
-4. Select **3 → 1**, save a fake demo password/ID; then retrieve it with **3 → 2**.
-5. Select **4**, paste an online-fraud incident and show the automatic legal mapping.
-6. Select **5**, demonstrate Open/WEP vs WPA2/WPA3 and then app permissions.
-7. Select **6**, manually choose another offence category.
-
-## Important Legal Note
-
-The legal mapping is intentionally educational and rule-based. A cyber incident may involve multiple provisions, and the correct legal provisions depend on the facts, evidence, jurisdiction, and law in force at the time. Do not present the tool as a substitute for legal advice.
-
-## Security Note
-
-This is a classroom demonstration, not a production password manager. The project stores its Fernet key locally, so anyone who obtains both the key and encrypted files can decrypt them. Use only fictional/demo secrets during presentations.
-
-
-## LexGuard 2.0 Upgrades
-
-The existing modules remain intact. The web application now additionally provides:
-
-- Digital Evidence Vault with Evidence IDs, metadata and incident association
-- SHA-256 original/current integrity verification
-- Digital chain-of-custody history
-- Tamper-evident hash-chain audit log
-- Local IOC extraction for IPv4, URLs, domains, email addresses and MD5/SHA hashes
-- Local MITRE ATT&CK technique mapping
-- Structured incident response playbooks with completion progress
-- Incident timeline and case/history investigation center
-- Severity (Critical/High/Medium/Low) and P1-P4 priority
-- SOC dashboard metrics
-- Local URL analyzer, static file triage and password security lab
-- Controlled cyber-attack demo simulator
-- One-click forensic case ZIP export
-
-### Web Application
-
-```powershell
-python app.py
-```
-Then open `http://127.0.0.1:5000`. The project remains local/offline; no external threat-intelligence API is required for the new analysis modules.
-
-### Recommended 5-minute demo
-
-1. Run **Demo Simulator → Phishing Attack**.
-2. Show risk score, offence, extracted IOCs and MITRE ATT&CK mapping.
-3. Open **Investigation Center** and inspect the incident timeline.
-4. Upload a screenshot/text file in **Evidence Vault**, show SHA-256 and chain of custody.
-5. Verify evidence integrity; demonstrate the verified status.
-6. Mark response-playbook steps complete and show progress.
-7. Open **Security Lab → URL Analyzer** and analyze a suspicious URL.
-8. Export the complete forensic case ZIP and show its structured contents.
+1. **SOC Dashboard (`/`)**:
+   - Show real-time telemetry, threat distribution, and system status.
+   - Switch between **Dark Mode** and **Light Mode**.
+2. **Threat Intelligence (`Analyze Incident`)**:
+   - Ingest a phishing or financial fraud sample (or click **Attack Simulator → Phishing Attack**).
+   - Point out the **Risk Score**, **Extracted IOCs**, **MITRE ATT&CK Tactics (T1566, T1056)**, and **IT Act / BNS Statutory Provisions**.
+   - Click **Download Forensic PDF Report**.
+3. **Cryptographic Suite (`Cryptographic Security Suite`)**:
+   - **AES-256 Tab**: Encrypt a secret text in GCM mode; decrypt with master passphrase.
+   - **RSA-2048 Tab**: Click *Generate Keypair*; enter a message and generate a digital signature; click *Verify Signature*.
+   - **Steganography Lab**: Upload an image and embed a secret message; download the stego PNG and extract the hidden payload.
+   - **Multi-Hash Tab**: Enter text and show SHA-256, SHA-512, SHA3-256, and BLAKE2b side-by-side with entropy.
+4. **Data Loss Prevention (`Data Loss Prevention`)**:
+   - Run the **PII Redactor** on text containing Aadhaar, PAN, and Credit Card numbers to show automated masking.
+   - Run the **DoD 5220.22-M File Shredder** to demonstrate multi-pass sanitization.
+5. **Cyber Law & FIR Suite (`Cyber Law & Legal Enforcement`)**:
+   - Click **Formal Cyber Crime FIR Generator** to generate a court-ready police complaint.
+   - Click **Section 65B Certificate** to produce an electronic evidence affidavit.
+6. **Digital Evidence Vault (`Evidence Vault`)**:
+   - Ingest an evidence file, view the SHA-256 fingerprint, and run **Verify Integrity** to demonstrate tamper detection.
